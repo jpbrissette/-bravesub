@@ -4,24 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your .brave Portfolio | Decentralized Creator</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Decentralized creator portfolio showcasing IPFS-hosted art and on-chain NFT collections. Explore Web3 art and support creators directly with crypto.">
+    <meta name="keywords" content="Web3, NFT, IPFS, decentralized art, blockchain portfolio, crypto art">
+    <meta name="author" content="YourName">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="YourName.brave - Decentralized Creator Portfolio">
+    <meta property="og:description" content="Explore my decentralized art portfolio hosted on IPFS with Web3 integration">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourname.brave">
+    <meta property="og:image" content="https://placehold.co/1200x630/1A1A1A/6C63FF?text=YourName.brave">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YourName.brave - Decentralized Creator Portfolio">
+    <meta name="twitter:description" content="Explore my decentralized art portfolio hosted on IPFS with Web3 integration">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/1A1A1A/6C63FF?text=YourName.brave">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+    
     <!-- Use Inter font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
     <style>
         /* -------------------------------------------------------------------
-           Global Styles & Variables (From style.css)
+           Global Styles & Variables
         ---------------------------------------------------------------------- */
 
         :root {
             --color-dark: #1A1A1A;
             --color-light: #F0F0F0;
-            --color-accent: #6C63FF; /* Brave-inspired purple/blue */
+            --color-accent: #6C63FF;
             --color-secondary: #333333;
             --font-family: 'Inter', sans-serif;
             --border-radius: 8px;
             --transition-speed: 0.3s;
         }
 
-        /* Set up the base for a modern, dark theme */
+        /* Base styles */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: var(--font-family);
             background-color: var(--color-dark);
@@ -33,7 +60,35 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Base link and header styling */
+        /* Skip to content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-accent);
+            color: var(--color-light);
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Screen reader only text */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
         a {
             color: var(--color-accent);
             text-decoration: none;
@@ -44,27 +99,46 @@
             color: var(--color-light);
         }
 
+        a:focus {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
         h1, h2, h3 {
             color: var(--color-light);
             margin-top: 0;
             font-weight: 700;
         }
 
-        /* Utility Class for Content Centering */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem; /* Padding for mobile responsiveness */
+            padding: 0 1.5rem;
         }
 
-        /* Section Padding */
         section {
             padding: 6rem 0;
         }
 
+        /* Loading spinner */
+        .spinner {
+            border: 3px solid var(--color-secondary);
+            border-top: 3px solid var(--color-accent);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
         /* -------------------------------------------------------------------
-           Navigation Bar (Header)
+           Navigation Bar
         ---------------------------------------------------------------------- */
 
         .site-header {
@@ -108,13 +182,14 @@
             opacity: 0.8;
         }
 
-        .site-nav a:hover {
+        .site-nav a:hover,
+        .site-nav a:focus {
             color: var(--color-accent);
             opacity: 1;
         }
 
         /* -------------------------------------------------------------------
-           Hero Section (Large Header)
+           Hero Section
         ---------------------------------------------------------------------- */
 
         .hero-section {
@@ -124,12 +199,13 @@
         }
 
         .hero-content h2 {
-            font-size: clamp(2rem, 5vw, 4rem); /* Responsive font sizing */
+            font-size: clamp(2rem, 5vw, 4rem);
             margin-bottom: 1rem;
             font-weight: 900;
             background: linear-gradient(90deg, #6C63FF, #A68DFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-content p {
@@ -150,6 +226,9 @@
             letter-spacing: 1px;
             transition: transform var(--transition-speed), background-color var(--transition-speed);
             box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-family);
         }
 
         .cta-button:hover {
@@ -157,12 +236,21 @@
             transform: translateY(-2px);
         }
 
+        .cta-button:focus {
+            outline: 2px solid var(--color-light);
+            outline-offset: 2px;
+        }
+
+        .cta-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
 
         /* -------------------------------------------------------------------
-           Art Gallery Section (The Core Content - Static)
+           Art Gallery Section
         ---------------------------------------------------------------------- */
 
-        .art-gallery-section { /* Renamed from .gallery-section */
+        .art-gallery-section {
             background-color: var(--color-dark);
             text-align: center;
         }
@@ -188,7 +276,6 @@
 
         .gallery-grid {
             display: grid;
-            /* Responsive Grid: 1 column on small, 2 on medium, 3 on large */
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
@@ -202,7 +289,8 @@
             transition: transform var(--transition-speed);
         }
 
-        .gallery-item:hover {
+        .gallery-item:hover,
+        .gallery-item:focus-within {
             transform: translateY(-5px);
         }
 
@@ -210,16 +298,15 @@
             width: 100%;
             height: auto;
             display: block;
-            aspect-ratio: 1 / 1; /* Keep images square */
+            aspect-ratio: 1 / 1;
             object-fit: cover;
             transition: opacity var(--transition-speed);
         }
 
         .gallery-item:hover img {
-            opacity: 0.2; /* Darken image on hover to show overlay text */
+            opacity: 0.2;
         }
 
-        /* Item Overlay for Title/Description */
         .item-overlay {
             position: absolute;
             top: 0;
@@ -231,14 +318,14 @@
             justify-content: center;
             align-items: center;
             padding: 1rem;
-            opacity: 0; /* Hidden by default */
+            opacity: 0;
             transition: opacity var(--transition-speed);
-            pointer-events: none; /* Allows click-through to the underlying element if needed */
+            pointer-events: none;
             text-align: center;
         }
 
         .gallery-item:hover .item-overlay {
-            opacity: 1; /* Show on hover */
+            opacity: 1;
             pointer-events: all;
         }
 
@@ -253,7 +340,7 @@
         }
         
         /* -------------------------------------------------------------------
-           NFT Gallery Section (Dynamic)
+           NFT Gallery Section
         ---------------------------------------------------------------------- */
         
         .nft-gallery-section {
@@ -282,6 +369,13 @@
             color: var(--color-light);
             font-family: var(--font-family);
             flex-grow: 1;
+            transition: border-color var(--transition-speed);
+        }
+
+        .nft-input-module input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.3);
         }
 
         .nft-grid {
@@ -324,9 +418,8 @@
         .nft-card-info p {
             font-size: 0.85rem;
             color: #ccc;
-            margin: 0;
+            margin: 0.25rem 0;
         }
-
 
         /* -------------------------------------------------------------------
            About Section
@@ -385,6 +478,14 @@
             background-color: #444;
             color: var(--color-light);
             font-family: var(--font-family);
+            transition: border-color var(--transition-speed);
+        }
+
+        .tip-module input:focus,
+        .tip-module select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.3);
         }
 
         .tip-module input {
@@ -396,6 +497,33 @@
             margin-top: 1rem;
             font-size: 0.9rem;
             color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .network-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .network-badge.ethereum {
+            background-color: #627EEA;
+            color: white;
+        }
+
+        .network-badge.polygon {
+            background-color: #8247E5;
+            color: white;
+        }
+
+        .network-badge.unknown {
+            background-color: #666;
+            color: white;
         }
 
         /* -------------------------------------------------------------------
@@ -403,7 +531,7 @@
         ---------------------------------------------------------------------- */
 
         .contact-section {
-            background-color: var(--color-dark); /* Alternating dark/secondary background */
+            background-color: var(--color-dark);
             text-align: center;
         }
 
@@ -439,6 +567,11 @@
             box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.3);
         }
 
+        .contact-form input:invalid,
+        .contact-form textarea:invalid {
+            border-color: #ff6b6b;
+        }
+
         .submit-button {
             cursor: pointer;
             background-color: var(--color-accent);
@@ -449,13 +582,19 @@
             font-weight: 600;
             text-transform: uppercase;
             transition: background-color var(--transition-speed), transform var(--transition-speed);
+            font-family: var(--font-family);
         }
 
         .submit-button:hover {
             background-color: #584dff;
             transform: translateY(-1px);
         }
-        
+
+        .submit-button:focus {
+            outline: 2px solid var(--color-light);
+            outline-offset: 2px;
+        }
+
         /* -------------------------------------------------------------------
            Footer
         ---------------------------------------------------------------------- */
@@ -481,11 +620,10 @@
         }
 
         /* -------------------------------------------------------------------
-           Mobile Optimizations (Media Query)
+           Mobile Optimizations
         ---------------------------------------------------------------------- */
 
         @media (max-width: 768px) {
-            /* Adjust header for mobile */
             .site-header .container {
                 flex-direction: column;
                 padding-top: 1.5rem;
@@ -502,12 +640,10 @@
                 margin: 0.5rem 0;
             }
 
-            /* Adjust main section padding */
             section {
                 padding: 4rem 0;
             }
 
-            /* Adjust hero text size */
             .hero-content h2 {
                 font-size: 2.5rem;
             }
@@ -516,7 +652,6 @@
                 font-size: 1rem;
             }
             
-            /* Adjust tip module for small screens */
             .tip-module, .nft-input-module {
                 flex-direction: column;
                 padding: 1rem;
@@ -530,6 +665,8 @@
     </style>
 </head>
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Navigation Bar -->
     <header class="site-header">
@@ -537,7 +674,7 @@
             <h1 class="logo">
                 <a href="#hero">YourName.brave</a>
             </h1>
-            <nav class="site-nav">
+            <nav class="site-nav" aria-label="Main navigation">
                 <ul>
                     <li><a href="#art-gallery">Art Gallery</a></li>
                     <li><a href="#nft-gallery">NFT Gallery</a></li>
@@ -555,82 +692,95 @@
             <div class="hero-content">
                 <h2>The Decentralized Creator's Portfolio</h2>
                 <p>Welcome to my on-chain creative space. All art is hosted on IPFS.</p>
-                <a href="#art-gallery" class="cta-button">View My Static Work</a>
+                <a href="#art-gallery" class="cta-button" aria-label="View static art gallery">View My Static Work</a>
             </div>
         </div>
     </section>
 
-    <!-- Art Gallery Section (Static IPFS-based Art) -->
-    <main id="art-gallery" class="art-gallery-section">
+    <!-- Art Gallery Section -->
+    <main id="main-content" class="art-gallery-section">
         <div class="container">
             <h2>Static Art Gallery (IPFS)</h2>
             <div class="gallery-grid">
-                <!-- Gallery Item 1 (Placeholder) -->
-                <div class="gallery-item">
-                    <img src="https://placehold.co/400x400/333333/6C63FF?text=IPFS+Art+1" alt="A digital sculpture of a flowing line">
+                <article class="gallery-item">
+                    <img src="https://placehold.co/400x400/333333/6C63FF?text=IPFS+Art+1" alt="Flowing Genesis - A digital sculpture of flowing lines" loading="lazy">
                     <div class="item-overlay">
                         <h3>Flowing Genesis</h3>
                         <p>A decentralized sketch, pinned to IPFS.</p>
                     </div>
-                </div>
-                <!-- Gallery Item 2 (Placeholder) -->
-                <div class="gallery-item">
-                    <img src="https://placehold.co/400x400/333333/6C63FF?text=IPFS+Art+2" alt="An abstract geometric shape">
+                </article>
+                <article class="gallery-item">
+                    <img src="https://placehold.co/400x400/333333/6C63FF?text=IPFS+Art+2" alt="Quantum Grid - An abstract geometric shape" loading="lazy">
                     <div class="item-overlay">
                         <h3>Quantum Grid</h3>
                         <p>Exploring geometry on the Polygon network.</p>
                     </div>
-                </div>
-                <!-- Gallery Item 3 (Placeholder) -->
-                <div class="gallery-item">
-                    <img src="https://placehold.co/400x400/333333/6C63FF?text=IPFS+Art+3" alt="A landscape in neon colors">
+                </article>
+                <article class="gallery-item">
+                    <img src="https://placehold.co/400x400/333333/6C63FF?text=IPFS+Art+3" alt="Neon Horizon - A landscape in neon colors" loading="lazy">
                     <div class="item-overlay">
                         <h3>Neon Horizon</h3>
                         <p>Minted as an NFT. View contract details.</p>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </main>
     
-    <!-- NFT Gallery Section (Dynamic Web3 Integration) -->
+    <!-- NFT Gallery Section -->
     <section id="nft-gallery" class="nft-gallery-section">
         <div class="container">
             <h2>Your On-Chain Assets (NFTs)</h2>
-            <p>Connect your wallet or enter any public address to simulate viewing the tokens held. **This demonstrates the required Web3 criteria.**</p>
+            <p>Connect your wallet or enter any public address to view NFT holdings. <strong>This demonstrates Web3 integration with mock data.</strong></p>
             
             <div class="nft-input-module">
-                <input type="text" id="wallet-input" placeholder="Enter ETH/MATIC Wallet Address (e.g., 0x...)" value="0x80e39e4f88a83c8489b122b90e3925ff78e6c5f6">
-                <button id="load-nft-button" class="cta-button">Load NFT Collection</button>
+                <label for="wallet-input" class="sr-only">Ethereum or Polygon wallet address</label>
+                <input 
+                    type="text" 
+                    id="wallet-input" 
+                    placeholder="Enter ETH/MATIC Wallet Address (e.g., 0x...)" 
+                    value="0x80e39e4f88a83c8489b122b90e3925ff78e6c5f6"
+                    aria-describedby="wallet-help"
+                    pattern="^0x[a-fA-F0-9]{40}$">
+                <span id="wallet-help" class="sr-only">Enter a valid 42-character Ethereum address starting with 0x</span>
+                <button id="load-nft-button" class="cta-button" aria-label="Load NFT collection for entered wallet address">Load NFT Collection</button>
             </div>
             
-            <div id="nft-status" class="message-box"></div>
+            <div id="nft-status" class="message-box" role="status" aria-live="polite"></div>
             
-            <!-- Dynamic NFT Cards will be injected here -->
             <div id="nft-list" class="nft-grid">
                 <p style="text-align: center; grid-column: 1 / -1;">Enter an address and click 'Load NFT Collection' to view dynamic assets.</p>
             </div>
         </div>
     </section>
 
-    <!-- Support Section (Web3 Integration - Tipping) -->
+    <!-- Support Section -->
     <section id="support" class="support-section">
         <div class="container">
             <h2>Support the Creator</h2>
             <p>If you enjoy the art and the decentralized mission, consider leaving a tip. Contributions help keep the IPFS pin running!</p>
             
             <div class="tip-module">
-                <input type="number" id="tip-amount" min="0.001" step="0.001" value="1.0" placeholder="0.00">
-                <select id="tip-unit">
-                    <!-- Note: MATIC is used as an example, as Polygon is often used for fast, cheap Web3 interaction -->
+                <label for="tip-amount" class="sr-only">Tip amount</label>
+                <input 
+                    type="number" 
+                    id="tip-amount" 
+                    min="0.001" 
+                    step="0.001" 
+                    value="1.0" 
+                    placeholder="0.00"
+                    aria-label="Tip amount in selected currency">
+                <label for="tip-unit" class="sr-only">Select cryptocurrency</label>
+                <select id="tip-unit" aria-label="Select cryptocurrency for tip">
                     <option value="matic">MATIC (Polygon)</option>
                     <option value="eth">ETH (Ethereum)</option>
                     <option value="gwei">GWEI (Test/Small)</option>
                 </select>
-                <button id="tip-button" class="cta-button">Tip Now (Connect Wallet)</button>
+                <button id="tip-button" class="cta-button" aria-label="Send tip to creator">Tip Now</button>
             </div>
 
-            <div id="tip-message" class="message-box"></div>
+            <div id="tip-message" class="message-box" role="status" aria-live="polite"></div>
+            <div id="network-info" class="message-box"></div>
         </div>
     </section>
 
@@ -648,11 +798,17 @@
             <h2>Contact</h2>
             <p>Connect with me for commissions, collaborations, or just to say hello.</p>
             <form id="contact-form" class="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <label for="contact-name" class="sr-only">Your name</label>
+                <input type="text" id="contact-name" name="name" placeholder="Your Name" required minlength="2">
+                
+                <label for="contact-email" class="sr-only">Your email</label>
+                <input type="email" id="contact-email" name="email" placeholder="Your Email" required>
+                
+                <label for="contact-message" class="sr-only">Your message</label>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Your Message" required minlength="10"></textarea>
+                
                 <button type="submit" class="submit-button">Send Message</button>
-                <div id="contact-message" class="message-box"></div>
+                <div id="contact-message" class="message-box" role="status" aria-live="polite"></div>
             </form>
         </div>
     </section>
@@ -661,58 +817,124 @@
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2025 YourName. All rights reserved. Hosted on IPFS via .brave domain.</p>
-            <div class="social-links">
-                <!-- Add social media icons here -->
-            </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Web3 Tipping and NFT Gallery Logic -->
+    <!-- JavaScript -->
     <script>
-        // Use a standard Web3 wallet address for receiving tips.
-        // NOTE: REPLACE 'YOUR_CREATOR_WALLET_ADDRESS' WITH YOUR ACTUAL PUBLIC ADDRESS
-        const CREATOR_WALLET_ADDRESS = '0x80e39e4f88a83c8489b122b90e3925ff78e6c5f6'; 
-
-        // Utility to convert user input to the smallest unit (Wei)
-        function toWei(amount, unit) {
-            let multiplier;
-            switch (unit.toLowerCase()) {
-                case 'eth':
-                case 'matic':
-                    multiplier = 1e18; // 10^18 (Standard for ETH and its equivalents)
-                    break;
-                case 'gwei':
-                    multiplier = 1e9;  // 10^9
-                    break;
-                default:
-                    multiplier = 1e18;
-            }
-            // Using BigInt for safer handling of large numbers
-            return BigInt(Math.floor(amount * multiplier));
-        }
+        // Configuration
+        const CREATOR_WALLET_ADDRESS = '0x80e39e4f88a83c8489b122b90e3925ff78e6c5f6';
+        const ETHEREUM_CHAIN_ID = '0x1';
+        const POLYGON_CHAIN_ID = '0x89';
         
-        // --- MOCK NFT DATA ---
-        // In a real application, this data would be fetched from a service like Alchemy, Moralis, or a public indexer.
+        // Network names
+        const NETWORK_NAMES = {
+            '0x1': 'Ethereum Mainnet',
+            '0x89': 'Polygon Mainnet',
+            '0x5': 'Goerli Testnet',
+            '0x13881': 'Mumbai Testnet'
+        };
+
+        // Utility: Convert to Wei (fixed BigInt handling)
+        function toWei(amount, unit) {
+            const multipliers = {
+                'eth': '1000000000000000000',
+                'matic': '1000000000000000000',
+                'gwei': '1000000000'
+            };
+            
+            const multiplier = BigInt(multipliers[unit.toLowerCase()] || multipliers.eth);
+            const amountBigInt = BigInt(Math.floor(amount * 1000000000));
+            return (amountBigInt * multiplier) / BigInt(1000000000);
+        }
+
+        // Utility: Get network name
+        function getNetworkName(chainId) {
+            return NETWORK_NAMES[chainId] || 'Unknown Network';
+        }
+
+        // Utility: Display network badge
+        function displayNetworkInfo(chainId) {
+            const networkInfo = document.getElementById('network-info');
+            const networkName = getNetworkName(chainId);
+            const badgeClass = chainId === ETHEREUM_CHAIN_ID ? 'ethereum' : 
+                               chainId === POLYGON_CHAIN_ID ? 'polygon' : 'unknown';
+            
+            networkInfo.innerHTML = `Connected to: <span class="network-badge ${badgeClass}">${networkName}</span>`;
+        }
+
+        // Verify and switch network
+        async function verifyNetwork(targetChainId, networkName) {
+            const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+            
+            if (chainId !== targetChainId) {
+                try {
+                    await window.ethereum.request({
+                        method: 'wallet_switchEthereumChain',
+                        params: [{ chainId: targetChainId }],
+                    });
+                    return true;
+                } catch (switchError) {
+                    if (switchError.code === 4902) {
+                        throw new Error(`${networkName} is not added to your wallet. Please add it manually.`);
+                    }
+                    throw switchError;
+                }
+            }
+            return true;
+        }
+
+        // Mock NFT Data
         const mockNFTData = [
-            { id: 101, name: "Pixel Pioneer #1", collection: "Brave Builders", imageUrl: "https://placehold.co/400x400/6C63FF/1A1A1A?text=NFT+1%0A(Token+101)", contract: "0xABC...123", token_type: "ERC-721" },
-            { id: 102, name: "Quantum Sphere", collection: "Decentralized Dreams", imageUrl: "https://placehold.co/400x400/A68DFF/1A1A1A?text=NFT+2%0A(Token+102)", contract: "0xDEF...456", token_type: "ERC-721" },
-            { id: 103, name: "IPFS Beacon 03", collection: "Web3 Utility", imageUrl: "https://placehold.co/400x400/444/6C63FF?text=NFT+3%0A(Token+103)", contract: "0xGHI...789", token_type: "ERC-1155" },
-            { id: 104, name: "The Gold Key", collection: "Premium Access", imageUrl: "https://placehold.co/400x400/808080/FFFFFF?text=NFT+4%0A(Token+104)", contract: "0xJKL...012", token_type: "ERC-721" }
+            { 
+                id: 101, 
+                name: "Pixel Pioneer #1", 
+                collection: "Brave Builders", 
+                imageUrl: "https://placehold.co/400x400/6C63FF/1A1A1A?text=NFT+1%0A(Token+101)", 
+                contract: "0xABC...123", 
+                token_type: "ERC-721" 
+            },
+            { 
+                id: 102, 
+                name: "Quantum Sphere", 
+                collection: "Decentralized Dreams", 
+                imageUrl: "https://placehold.co/400x400/A68DFF/1A1A1A?text=NFT+2%0A(Token+102)", 
+                contract: "0xDEF...456", 
+                token_type: "ERC-721" 
+            },
+            { 
+                id: 103, 
+                name: "IPFS Beacon 03", 
+                collection: "Web3 Utility", 
+                imageUrl: "https://placehold.co/400x400/444/6C63FF?text=NFT+3%0A(Token+103)", 
+                contract: "0xGHI...789", 
+                token_type: "ERC-1155" 
+            },
+            { 
+                id: 104, 
+                name: "The Gold Key", 
+                collection: "Premium Access", 
+                imageUrl: "https://placehold.co/400x400/808080/FFFFFF?text=NFT+4%0A(Token+104)", 
+                contract: "0xJKL...012", 
+                token_type: "ERC-721" 
+            }
         ];
 
-        // --- NFT Gallery Logic ---
+        // Create NFT card element
         function createNFTCard(nft) {
-            const card = document.createElement('div');
+            const card = document.createElement('article');
             card.className = 'nft-card';
+            card.setAttribute('role', 'article');
             
-            // Image (linked to an external URL like IPFS or CDN)
             const img = document.createElement('img');
             img.src = nft.imageUrl;
-            img.alt = nft.name;
-            // Fallback for image loading error
-            img.onerror = function() { this.src = 'https://placehold.co/400x400/555/FFF?text=Image+Load+Error'; };
+            img.alt = `${nft.name} from ${nft.collection}`;
+            img.loading = 'lazy';
+            img.onerror = function() { 
+                this.src = 'https://placehold.co/400x400/555/FFF?text=Image+Load+Error';
+                this.alt = 'Failed to load NFT image';
+            };
             
-            // Info block
             const info = document.createElement('div');
             info.className = 'nft-card-info';
             
@@ -723,11 +945,21 @@
             collection.textContent = `Collection: ${nft.collection}`;
 
             const tokenId = document.createElement('p');
-            tokenId.textContent = `Token ID: ${nft.id} (${nft.token_type})`;
+            tokenId.textContent = `Token ID: ${nft.id}`;
+
+            const tokenType = document.createElement('p');
+            tokenType.textContent = `Type: ${nft.token_type}`;
+
+            const contract = document.createElement('p');
+            contract.textContent = `Contract: ${nft.contract}`;
+            contract.style.fontSize = '0.75rem';
+            contract.style.opacity = '0.7';
 
             info.appendChild(title);
             info.appendChild(collection);
             info.appendChild(tokenId);
+            info.appendChild(tokenType);
+            info.appendChild(contract);
             
             card.appendChild(img);
             card.appendChild(info);
@@ -735,125 +967,218 @@
             return card;
         }
 
+        // Fetch and display NFTs
         async function fetchAndDisplayNFTs() {
             const walletInput = document.getElementById('wallet-input');
             const nftStatus = document.getElementById('nft-status');
             const nftList = document.getElementById('nft-list');
+            const loadButton = document.getElementById('load-nft-button');
             const walletAddress = walletInput.value.trim();
             
             nftList.innerHTML = '';
-            nftStatus.textContent = '';
+            nftStatus.innerHTML = '';
 
+            // Validate wallet address
             if (!walletAddress || !/^0x[a-fA-F0-9]{40}$/.test(walletAddress)) {
-                nftStatus.style.color = 'red';
+                nftStatus.style.color = '#ff6b6b';
                 nftStatus.textContent = 'Please enter a valid 42-character Ethereum/Polygon wallet address.';
                 return;
             }
 
-            nftStatus.style.color = 'yellow';
-            nftStatus.textContent = `Fetching NFTs for ${walletAddress.substring(0, 8)}... (Simulated 2s delay)`;
+            // Show loading state
+            loadButton.disabled = true;
+            nftStatus.style.color = '#ffd93d';
+            nftStatus.innerHTML = `<span class="spinner"></span>Fetching NFTs for ${walletAddress.substring(0, 8)}...${walletAddress.substring(38)}`;
             
-            // --- SIMULATED ASYNC FETCH ---
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            // In a real app, you would replace the above line and the promise below with:
-            // const response = await fetch(`YOUR_API_ENDPOINT?address=${walletAddress}`);
-            // const data = await response.json();
-            // const nfts = data.assets; 
-
-            const nfts = await new Promise(resolve => resolve(mockNFTData)); // Resolve with mock data
-            
-            if (!nfts || nfts.length === 0) {
-                nftStatus.style.color = '#ccc';
-                nftStatus.textContent = `No NFTs found for ${walletAddress}.`;
-                nftList.innerHTML = '<p style="text-align: center; grid-column: 1 / -1;">This address appears to hold no recognized NFT assets.</p>';
-            } else {
-                nftStatus.style.color = 'lightgreen';
-                nftStatus.textContent = `${nfts.length} NFTs loaded successfully (Mock Data).`;
+            try {
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 2000));
                 
-                nfts.forEach(nft => {
-                    nftList.appendChild(createNFTCard(nft));
-                });
+                // In production, replace with actual API call:
+                // const response = await fetch(`https://api.example.com/nfts?address=${walletAddress}`);
+                // const data = await response.json();
+                // const nfts = data.assets;
+                
+                const nfts = mockNFTData;
+                
+                if (!nfts || nfts.length === 0) {
+                    nftStatus.style.color = '#ccc';
+                    nftStatus.textContent = `No NFTs found for this address.`;
+                    nftList.innerHTML = '<p style="text-align: center; grid-column: 1 / -1;">This address appears to hold no recognized NFT assets.</p>';
+                } else {
+                    nftStatus.style.color = '#6BCF7F';
+                    nftStatus.textContent = `✓ Successfully loaded ${nfts.length} NFT${nfts.length > 1 ? 's' : ''} (Mock Data for Demo)`;
+                    
+                    nfts.forEach(nft => {
+                        nftList.appendChild(createNFTCard(nft));
+                    });
+                }
+            } catch (error) {
+                nftStatus.style.color = '#ff6b6b';
+                nftStatus.textContent = `Error loading NFTs: ${error.message}`;
+                console.error('NFT fetch error:', error);
+            } finally {
+                loadButton.disabled = false;
             }
         }
 
-        // --- Initialization and Event Listeners ---
+        // Initialize on DOM load
         document.addEventListener('DOMContentLoaded', () => {
             const tipButton = document.getElementById('tip-button');
             const tipAmountInput = document.getElementById('tip-amount');
             const tipUnitSelect = document.getElementById('tip-unit');
             const tipMessage = document.getElementById('tip-message');
+            const networkInfo = document.getElementById('network-info');
             const loadNftButton = document.getElementById('load-nft-button');
             const contactForm = document.getElementById('contact-form');
             const contactMessage = document.getElementById('contact-message');
 
-            // --- 1. Brave Wallet/Web3 Check (Tipping) ---
+            // Check for Web3 wallet
             if (typeof window.ethereum === 'undefined') {
-                tipButton.textContent = "Wallet Not Detected (Install Brave)";
+                tipButton.textContent = "Wallet Not Detected";
                 tipButton.disabled = true;
-                tipMessage.style.color = 'red';
-                tipMessage.textContent = 'Please install the Brave Browser or a compatible Web3 wallet to contribute.';
+                tipMessage.style.color = '#ff6b6b';
+                tipMessage.textContent = 'Please install Brave Browser or a Web3 wallet (MetaMask, etc.) to send tips.';
+                networkInfo.style.color = '#ff6b6b';
+                networkInfo.textContent = 'Web3 wallet not detected';
             } else {
-                tipButton.textContent = "Tip Now!";
-                tipButton.disabled = false;
+                // Listen for account and network changes
+                window.ethereum.on('accountsChanged', (accounts) => {
+                    if (accounts.length === 0) {
+                        tipMessage.style.color = '#ffd93d';
+                        tipMessage.textContent = 'Wallet disconnected';
+                    }
+                });
+
+                window.ethereum.on('chainChanged', (chainId) => {
+                    displayNetworkInfo(chainId);
+                });
+
+                // Display current network if already connected
+                window.ethereum.request({ method: 'eth_chainId' })
+                    .then(chainId => displayNetworkInfo(chainId))
+                    .catch(() => {});
             }
 
-            // --- 2. Tipping Functionality ---
+            // Tipping functionality
             tipButton.addEventListener('click', async () => {
                 const amount = parseFloat(tipAmountInput.value);
                 const unit = tipUnitSelect.value;
 
                 if (isNaN(amount) || amount <= 0) {
-                    tipMessage.style.color = 'yellow';
-                    tipMessage.textContent = 'Please enter a valid tip amount.';
+                    tipMessage.style.color = '#ffd93d';
+                    tipMessage.textContent = 'Please enter a valid tip amount greater than 0.';
                     return;
                 }
 
-                tipMessage.textContent = 'Connecting to wallet...';
-                tipMessage.style.color = 'yellow';
+                tipButton.disabled = true;
+                tipMessage.innerHTML = '<span class="spinner"></span>Connecting to wallet...';
+                tipMessage.style.color = '#ffd93d';
 
                 try {
+                    // Request account access
                     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
                     const sender = accounts[0];
-                    const valueInWei = toWei(amount, unit).toString(16);
+
+                    // Get current network
+                    const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+                    displayNetworkInfo(chainId);
+
+                    // Determine target network based on currency
+                    const targetChainId = unit === 'matic' ? POLYGON_CHAIN_ID : ETHEREUM_CHAIN_ID;
+                    const targetNetwork = unit === 'matic' ? 'Polygon' : 'Ethereum';
+
+                    // Verify/switch network if needed
+                    if (chainId !== targetChainId) {
+                        tipMessage.innerHTML = `<span class="spinner"></span>Switching to ${targetNetwork}...`;
+                        await verifyNetwork(targetChainId, targetNetwork);
+                        displayNetworkInfo(targetChainId);
+                    }
+
+                    // Convert amount to Wei
+                    const valueInWei = toWei(amount, unit);
+                    const valueHex = '0x' + valueInWei.toString(16);
 
                     const txParams = {
                         from: sender,
                         to: CREATOR_WALLET_ADDRESS,
-                        value: '0x' + valueInWei,
+                        value: valueHex,
                     };
 
-                    tipMessage.textContent = `Requesting transfer of ${amount} ${unit.toUpperCase()}...`;
+                    tipMessage.innerHTML = `<span class="spinner"></span>Requesting transfer of ${amount} ${unit.toUpperCase()}...`;
                     
                     const txHash = await window.ethereum.request({
                         method: 'eth_sendTransaction',
                         params: [txParams],
                     });
 
-                    tipMessage.style.color = 'lightgreen';
-                    tipMessage.textContent = `Success! Transaction sent (Hash: ${txHash.substring(0, 10)}...). Thank you for your support!`;
+                    tipMessage.style.color = '#6BCF7F';
+                    tipMessage.textContent = `✓ Success! Transaction sent: ${txHash.substring(0, 10)}...${txHash.substring(58)} - Thank you for your support!`;
 
                 } catch (error) {
                     console.error('Tipping failed:', error);
-                    tipMessage.style.color = 'red';
+                    tipMessage.style.color = '#ff6b6b';
                     
                     if (error.code === 4001) {
-                        tipMessage.textContent = 'Transaction rejected by user.';
+                        tipMessage.textContent = '✗ Transaction rejected by user.';
+                    } else if (error.code === -32002) {
+                        tipMessage.textContent = '✗ Connection request pending. Please check your wallet.';
                     } else {
-                        tipMessage.textContent = `Error: ${error.message || 'An unknown error occurred during the transaction.'}`;
+                        tipMessage.textContent = `✗ Error: ${error.message || 'An unknown error occurred.'}`;
                     }
+                } finally {
+                    tipButton.disabled = false;
                 }
             });
 
-            // --- 3. NFT Load Event ---
+            // NFT loading
             loadNftButton.addEventListener('click', fetchAndDisplayNFTs);
             
-            // --- 4. Simple Contact Form Submission (Non-functional, without alert) ---
-            contactForm.addEventListener('submit', (e) => {
+            // Allow Enter key to trigger NFT load
+            document.getElementById('wallet-input').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    fetchAndDisplayNFTs();
+                }
+            });
+
+            // Contact form submission
+            contactForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                contactMessage.style.color = 'lightgreen';
-                contactMessage.textContent = 'Message sent! (Note: In a real IPFS site, form data requires a decentralized backend service.)';
+                
+                const submitButton = contactForm.querySelector('.submit-button');
+                submitButton.disabled = true;
+                
+                contactMessage.innerHTML = '<span class="spinner"></span>Sending message...';
+                contactMessage.style.color = '#ffd93d';
+                
+                // Simulate submission delay
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                contactMessage.style.color = '#6BCF7F';
+                contactMessage.textContent = '✓ Message sent successfully! (Note: In production, this requires a decentralized backend service or email gateway.)';
+                
                 contactForm.reset();
-                setTimeout(() => contactMessage.textContent = '', 5000); // Clear message after 5 seconds
+                submitButton.disabled = false;
+                
+                // Clear success message after 7 seconds
+                setTimeout(() => {
+                    contactMessage.textContent = '';
+                }, 7000);
+            });
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
             });
         });
     </script>
