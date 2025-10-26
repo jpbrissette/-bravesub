@@ -578,7 +578,8 @@
                 <ul>
                     <li><a href="#art-gallery">Art Gallery</a></li>
                     <li><a href="#nft-gallery">NFT Gallery</a></li>
-                    <li><a href="#support">Support</a></li>
+                    <li><a href="#support">Support (BAT)</a></li>
+                    <li><a href="#why-brave">Why Brave</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -592,7 +593,7 @@
             <div class="hero-content">
                 <h2>The Decentralized Creator's Portfolio</h2>
                 <p>Welcome to my on-chain creative space. All art is hosted on IPFS.</p>
-                <a href="#art-gallery" class="cta-button">View My Static Work</a>
+                <a href="#art-gallery" class="cta-button">View My Art Gallery</a>
             </div>
         </div>
     </section>
@@ -600,27 +601,45 @@
     <!-- Art Gallery Section (Static IPFS-based Art) -->
     <main id="art-gallery" class="art-gallery-section">
         <div class="container">
-            <h2>Static Art Gallery (IPFS)</h2>
+            <h2>Art Gallery</h2>
+            <p style="max-width: 700px; margin: 0 auto 3rem; font-size: 1rem;">Original digital artwork permanently stored on IPFS via <a href="https://pinata.cloud" target="_blank" rel="noopener" style="color: var(--color-accent);">Pinata</a>. View, explore, and appreciate decentralized art.</p>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://placehold.co/400x400/333333/6C63FF?text=IPFS+Art+1" alt="A digital sculpture of a flowing line">
+                    <img src="https://olive-secondary-jay-380.mypinata.cloud/ipfs/bafybeifbxdsjqynj26ktx5xq2mzhda2n234pommf5k5aou4lmqscarlnca" alt="Fox in a Box - Digital artwork hosted on IPFS">
                     <div class="item-overlay">
-                        <h3>Flowing Genesis</h3>
-                        <p>A decentralized sketch, pinned to IPFS.</p>
+                        <h3>Fox in a Box</h3>
+                        <p>Original digital artwork, permanently stored on IPFS.</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://placehold.co/400x400/333333/6C63FF?text=IPFS+Art+2" alt="An abstract geometric shape">
+                    <img src="https://olive-secondary-jay-380.mypinata.cloud/ipfs/bafybeig2ej5kvqqss7aax6jssxi2vlwmw6gwckq53mphdglp4ljkjnueku" alt="Fox on a Box - Digital artwork hosted on IPFS">
                     <div class="item-overlay">
-                        <h3>Quantum Grid</h3>
-                        <p>Exploring geometry on the Polygon network.</p>
+                        <h3>Fox on a Box</h3>
+                        <p>Companion piece to Fox in a Box, stored on IPFS.</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://placehold.co/400x400/333333/6C63FF?text=IPFS+Art+3" alt="A landscape in neon colors">
+                    <img src="https://olive-secondary-jay-380.mypinata.cloud/ipfs/bafybeicfut6yvbyhkh2qcx44ttjkuf7gg3hnd55tavf7i2uq7lqs4eapke" alt="Femme Fatale - Digital artwork hosted on IPFS">
                     <div class="item-overlay">
-                        <h3>Neon Horizon</h3>
-                        <p>Minted as an NFT. View contract details.</p>
+                        <h3>Femme Fatale</h3>
+                        <p>Original digital art piece, permanently stored on IPFS.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <video 
+                        src="https://olive-secondary-jay-380.mypinata.cloud/ipfs/bafybeicmhk7b4l6uaq7gd5a75zmaujy3qkbfvhsxmeciypgzccb5jqh5xu" 
+                        controls 
+                        loop 
+                        muted
+                        playsinline
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23333' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%236C63FF'%3EGalaxy Swirl%3C/text%3E%3C/svg%3E"
+                    >
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="item-overlay">
+                        <h3>Galaxy Swirl</h3>
+                        <p>Animated digital art, hosted on IPFS.</p>
                     </div>
                 </div>
             </div>
@@ -631,7 +650,7 @@
     <section id="nft-gallery" class="nft-gallery-section">
         <div class="container">
             <h2>View Any Wallet's NFT Collection</h2>
-            <p>Enter any Ethereum or Polygon address to view their on-chain assets. <strong>Powered by secure Moralis API.</strong></p>
+            <p>Enter any Ethereum or Polygon address to view their on-chain assets. <strong>Powered by <a href="https://moralis.io" target="_blank" rel="noopener" style="color: var(--color-accent);">Moralis API</a></strong> for reliable blockchain data indexing.</p>
             
             <div class="nft-input-module">
                 <label for="wallet-input">
@@ -664,11 +683,11 @@
         </div>
     </section>
 
-    <!-- Support Section (Web3 Integration - Tipping) -->
+    <!-- Support Section (BAT & Crypto Tipping) -->
     <section id="support" class="support-section">
         <div class="container">
-            <h2>Support the Creator</h2>
-            <p>If you enjoy the art and the decentralized mission, consider leaving a tip. Contributions help keep the IPFS pin running!</p>
+            <h2>Support the Creator with BAT</h2>
+            <p>Love the work? Send a tip using <strong>Basic Attention Token (BAT)</strong> or other cryptocurrencies. Your support helps keep this decentralized portfolio running!</p>
             
             <div class="tip-module">
                 <input 
@@ -681,13 +700,63 @@
                     aria-label="Tip amount"
                 >
                 <select id="tip-unit" aria-label="Cryptocurrency unit">
-                    <option value="matic">MATIC (Polygon)</option>
+                    <option value="bat">BAT (Ethereum)</option>
                     <option value="eth">ETH (Ethereum)</option>
+                    <option value="matic">MATIC (Polygon)</option>
                 </select>
                 <button id="tip-button" class="cta-button">Send Tip</button>
             </div>
 
             <div id="tip-message" class="message-box" role="status" aria-live="polite"></div>
+            
+            <div style="margin-top: 2rem; padding: 1rem; background: rgba(108, 99, 255, 0.1); border-radius: 8px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">
+                    💡 <strong>About BAT:</strong> Basic Attention Token is the native token of the Brave ecosystem, rewarding users and creators for their attention. Learn more at <a href="https://basicattentiontoken.org/" target="_blank" rel="noopener">basicattentiontoken.org</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Brave Section -->
+    <section id="why-brave" class="why-brave-section" style="background-color: var(--color-secondary); text-align: center; padding: 6rem 0;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">
+                <img src="https://brave.com/static-assets/images/brave-logo-sans-text.svg" alt="Brave logo" style="height: 40px; vertical-align: middle; margin-right: 1rem;">
+                Why Brave?
+            </h2>
+            
+            <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    
+                    <div style="padding: 1.5rem; background: var(--color-dark); border-radius: 8px; border-left: 4px solid var(--color-accent);">
+                        <h3 style="color: var(--color-accent); margin-bottom: 1rem;">🛡️ Privacy First</h3>
+                        <p style="margin: 0; font-size: 0.95rem;">I built this portfolio on the Brave ecosystem because privacy matters. No trackers, no ads, no surveillance—just pure Web3 creativity.</p>
+                    </div>
+                    
+                    <div style="padding: 1.5rem; background: var(--color-dark); border-radius: 8px; border-left: 4px solid var(--color-accent);">
+                        <h3 style="color: var(--color-accent); margin-bottom: 1rem;">⚡ BAT Integration</h3>
+                        <p style="margin: 0; font-size: 0.95rem;">Basic Attention Token powers my tipping system, allowing supporters to reward my work directly without intermediaries or platform fees.</p>
+                    </div>
+                    
+                    <div style="padding: 1.5rem; background: var(--color-dark); border-radius: 8px; border-left: 4px solid var(--color-accent);">
+                        <h3 style="color: var(--color-accent); margin-bottom: 1rem;">🌐 Decentralized Hosting</h3>
+                        <p style="margin: 0; font-size: 0.95rem;">This entire site is hosted on IPFS and served via my .brave domain—no centralized servers, no single point of failure.</p>
+                    </div>
+                
+                </div>
+                
+                <div style="text-align: center; padding: 2rem; background: rgba(108, 99, 255, 0.1); border-radius: 8px;">
+                    <h3 style="margin-bottom: 1rem;">My Brave Stack</h3>
+                    <p style="font-size: 1rem; margin-bottom: 1.5rem;">This portfolio showcases what's possible when you combine Brave's privacy-first browser, BAT's attention economy, and IPFS's decentralized storage:</p>
+                    <ul style="list-style: none; padding: 0; display: inline-block; text-align: left;">
+                        <li style="margin: 0.5rem 0;">✅ <strong>Brave Browser</strong> - Fast, private, ad-blocking by default</li>
+                        <li style="margin: 0.5rem 0;">✅ <strong>BAT Tipping</strong> - Direct creator support without platforms taking a cut</li>
+                        <li style="margin: 0.5rem 0;">✅ <strong>Brave Wallet</strong> - Built-in Web3 wallet for seamless transactions</li>
+                        <li style="margin: 0.5rem 0;">✅ <strong>IPFS Hosting</strong> - Censorship-resistant, permanent content</li>
+                        <li style="margin: 0.5rem 0;">✅ <strong><a href="https://unstoppabledomains.com" target="_blank" rel="noopener" style="color: var(--color-accent);">.brave Domain</a></strong> - Human-readable Web3 identity powered by Unstoppable Domains</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -699,11 +768,51 @@
         </div>
     </section>
 
+    <!-- Brave Search Integration -->
+    <section id="brave-search" class="brave-search-section" style="background-color: var(--color-secondary); text-align: center; padding: 6rem 0;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">
+                Search with Brave
+            </h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem;">Powered by Brave Search - the independent, privacy-respecting search engine. No tracking, no profiling, just results.</p>
+            
+            <div style="max-width: 700px; margin: 2rem auto;">
+                <form action="https://search.brave.com/search" method="get" target="_blank" style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+                    <input 
+                        type="text" 
+                        name="q" 
+                        placeholder="Search the web with Brave..." 
+                        required
+                        style="flex: 1; min-width: 250px; padding: 1rem; border: 1px solid #555; border-radius: 8px; background-color: var(--color-dark); color: var(--color-light); font-family: var(--font-family); font-size: 1rem;"
+                    >
+                    <button 
+                        type="submit" 
+                        class="cta-button"
+                        style="white-space: nowrap;"
+                    >
+                        🔍 Search
+                    </button>
+                </form>
+                
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; font-size: 0.9rem;">
+                    <a href="https://search.brave.com/search?q=Web3+art" target="_blank" rel="noopener" style="padding: 0.5rem 1rem; background: rgba(108, 99, 255, 0.2); border-radius: 20px; color: var(--color-light);">Web3 Art</a>
+                    <a href="https://search.brave.com/search?q=IPFS+hosting" target="_blank" rel="noopener" style="padding: 0.5rem 1rem; background: rgba(108, 99, 255, 0.2); border-radius: 20px; color: var(--color-light);">IPFS Hosting</a>
+                    <a href="https://search.brave.com/search?q=Basic+Attention+Token" target="_blank" rel="noopener" style="padding: 0.5rem 1rem; background: rgba(108, 99, 255, 0.2); border-radius: 20px; color: var(--color-light);">BAT Token</a>
+                    <a href="https://search.brave.com/search?q=decentralized+portfolios" target="_blank" rel="noopener" style="padding: 0.5rem 1rem; background: rgba(108, 99, 255, 0.2); border-radius: 20px; color: var(--color-light);">Decentralized Portfolios</a>
+                </div>
+                
+                <p style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.7;">
+                    Why Brave Search? Unlike Google, Brave Search doesn't track you, doesn't build a profile on you, and doesn't sell your data. It's built on an independent index for truly private results.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2>Get In Touch</h2>
-            <p>Have a question or want to collaborate? Send me a message!</p>
+            <p>Have a question or want to collaborate? Send me a message via <a href="https://web3forms.com" target="_blank" rel="noopener" style="color: var(--color-accent);">Web3Forms</a>!</p>
             
             <div id="contact-form" class="contact-form">
                 <!-- Web3Forms Access Key -->
@@ -850,7 +959,24 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                <img src="https://brave.com/static-assets/images/brave-logo-sans-text.svg" alt="Brave logo" style="height: 30px;">
+                <p style="margin: 0; font-size: 1rem; font-weight: 600;">Powered by Brave</p>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 1rem;">Built with Brave Browser | Hosted on IPFS | Tipping via BAT</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.8;">
+                Powered by: 
+                <a href="https://moralis.io" target="_blank" rel="noopener" style="margin: 0 0.3rem;">Moralis</a> • 
+                <a href="https://web3forms.com" target="_blank" rel="noopener" style="margin: 0 0.3rem;">Web3Forms</a> • 
+                <a href="https://pinata.cloud" target="_blank" rel="noopener" style="margin: 0 0.3rem;">Pinata</a>
+            </p>
             <p>&copy; 2025 theonly.brave. All rights reserved. Hosted on IPFS via .brave domain.</p>
+            <p style="font-size: 0.8rem; margin-top: 1rem;">
+                <a href="https://brave.com" target="_blank" rel="noopener" style="margin: 0 0.5rem;">Brave.com</a> |
+                <a href="https://basicattentiontoken.org" target="_blank" rel="noopener" style="margin: 0 0.5rem;">BAT</a> |
+                <a href="https://unstoppabledomains.com" target="_blank" rel="noopener" style="margin: 0 0.5rem;">Unstoppable Domains</a> |
+                <a href="https://ipfs.io" target="_blank" rel="noopener" style="margin: 0 0.5rem;">IPFS</a>
+            </p>
         </div>
     </footer>
 
@@ -866,12 +992,15 @@
         // ✅ YOUR WALLET ADDRESS FOR RECEIVING TIPS
         const CREATOR_WALLET_ADDRESS = '0x80e39e4f88a83c8489b122b90e3925ff78e6c5f6';
         
+        // ✅ BAT TOKEN CONTRACT ADDRESS (Ethereum Mainnet)
+        const BAT_CONTRACT_ADDRESS = '0x0D8775F648430679A709E98d2b0Cb6250d2887EF';
+        
         // =================================================================
         // UTILITY FUNCTIONS
         // =================================================================
         
         function toWei(amount, unit) {
-            const multiplier = (unit.toLowerCase() === 'eth' || unit.toLowerCase() === 'matic') 
+            const multiplier = (unit.toLowerCase() === 'eth' || unit.toLowerCase() === 'matic' || unit.toLowerCase() === 'bat') 
                 ? 1e18 
                 : 1e9;
             
@@ -1035,8 +1164,9 @@
         
         async function getChainId(unit) {
             const chainIds = {
-                'matic': '0x89',    // Polygon Mainnet
+                'bat': '0x1',       // BAT is on Ethereum Mainnet
                 'eth': '0x1',       // Ethereum Mainnet
+                'matic': '0x89',    // Polygon Mainnet
             };
             return chainIds[unit.toLowerCase()] || '0x1';
         }
@@ -1115,29 +1245,66 @@
 
                 const valueInWei = toWei(amount, unit);
                 
-                const gasEstimate = await window.ethereum.request({
-                    method: 'eth_estimateGas',
-                    params: [{
-                        from: sender,
-                        to: CREATOR_WALLET_ADDRESS,
-                        value: '0x' + valueInWei.toString(16),
-                    }],
-                });
-
-                tipMessage.textContent = `💸 Requesting ${amount} ${unit.toUpperCase()} transfer...`;
+                let txHash;
                 
-                const txHash = await window.ethereum.request({
-                    method: 'eth_sendTransaction',
-                    params: [{
-                        from: sender,
-                        to: CREATOR_WALLET_ADDRESS,
-                        value: '0x' + valueInWei.toString(16),
-                        gas: gasEstimate,
-                    }],
-                });
+                // Handle BAT (ERC-20 token) differently from native tokens
+                if (unit === 'bat') {
+                    tipMessage.textContent = `💸 Requesting ${amount} BAT transfer...`;
+                    
+                    // ERC-20 transfer function signature: transfer(address,uint256)
+                    // Function selector: 0xa9059cbb
+                    const transferFunctionSignature = '0xa9059cbb';
+                    
+                    // Encode recipient address (pad to 32 bytes)
+                    const recipientAddress = CREATOR_WALLET_ADDRESS.toLowerCase().replace('0x', '').padStart(64, '0');
+                    
+                    // Encode amount (pad to 32 bytes)
+                    const amountHex = valueInWei.toString(16).padStart(64, '0');
+                    
+                    // Combine function signature + recipient + amount
+                    const data = transferFunctionSignature + recipientAddress + amountHex;
+                    
+                    // Send transaction to BAT contract
+                    txHash = await window.ethereum.request({
+                        method: 'eth_sendTransaction',
+                        params: [{
+                            from: sender,
+                            to: BAT_CONTRACT_ADDRESS,
+                            data: data,
+                            gas: '0x186A0', // 100,000 gas limit for ERC-20 transfers
+                        }],
+                    });
+                } else {
+                    // Handle native tokens (ETH, MATIC)
+                    const gasEstimate = await window.ethereum.request({
+                        method: 'eth_estimateGas',
+                        params: [{
+                            from: sender,
+                            to: CREATOR_WALLET_ADDRESS,
+                            value: '0x' + valueInWei.toString(16),
+                        }],
+                    });
+
+                    tipMessage.textContent = `💸 Requesting ${amount} ${unit.toUpperCase()} transfer...`;
+                    
+                    txHash = await window.ethereum.request({
+                        method: 'eth_sendTransaction',
+                        params: [{
+                            from: sender,
+                            to: CREATOR_WALLET_ADDRESS,
+                            value: '0x' + valueInWei.toString(16),
+                            gas: gasEstimate,
+                        }],
+                    });
+                }
 
                 tipMessage.style.color = '#6bcf7f';
-                tipMessage.innerHTML = `✅ Success! <a href="https://${unit === 'matic' ? 'polygonscan' : 'etherscan'}.com/tx/${txHash}" target="_blank" rel="noopener" style="color: var(--color-accent);">View Transaction</a>`;
+                
+                const explorerUrl = unit === 'matic' 
+                    ? `https://polygonscan.com/tx/${txHash}`
+                    : `https://etherscan.io/tx/${txHash}`;
+                    
+                tipMessage.innerHTML = `✅ Success! <a href="${explorerUrl}" target="_blank" rel="noopener" style="color: var(--color-accent);">View Transaction</a>`;
                 
                 tipAmountInput.value = '1.0';
 
