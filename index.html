@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your .brave Portfolio | Decentralized Creator</title>
+    <title>theonly.brave Portfolio | Decentralized Creator</title>
     <!-- Use Inter font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
     <style>
@@ -572,7 +572,7 @@
     <header class="site-header">
         <div class="container">
             <h1 class="logo">
-                <a href="#hero">YourName.brave</a>
+                <a href="#hero">theonly.brave</a>
             </h1>
             <nav class="site-nav">
                 <ul>
@@ -699,25 +699,75 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Connect with me for commissions, collaborations, or just to say hello.</p>
-            <form id="contact-form" class="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit" class="submit-button">Send Message</button>
-                <div id="contact-message" class="message-box" role="status" aria-live="polite"></div>
-            </form>
-        </div>
-    </section>
+    <script>
+    // Web3Forms Contact Form Handler
+    document.addEventListener('DOMContentLoaded', () => {
+        const contactForm = document.getElementById('contact-form');
+        const contactMessage = document.getElementById('contact-message');
+        const submitButton = document.getElementById('contact-submit-btn');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const originalButtonText = submitButton.textContent;
+                
+                // Disable button and show loading state
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+                contactMessage.textContent = '';
+                contactMessage.style.color = '#ffd93d';
+                contactMessage.textContent = '📤 Sending your message...';
+                
+                // Get form data
+                const formData = new FormData(contactForm);
+                
+                try {
+                    // Submit to Web3Forms API
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        // Success
+                        contactMessage.style.color = '#6bcf7f';
+                        contactMessage.textContent = '✅ Message sent successfully! I\'ll get back to you soon.';
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Clear success message after 5 seconds
+                        setTimeout(() => {
+                            contactMessage.textContent = '';
+                        }, 5000);
+                    } else {
+                        // API returned error
+                        throw new Error(data.message || 'Failed to send message');
+                    }
+                    
+                } catch (error) {
+                    // Error handling
+                    console.error('Contact form error:', error);
+                    contactMessage.style.color = '#ff6b6b';
+                    contactMessage.textContent = '❌ Failed to send message. Please try emailing me directly or try again later.';
+                } finally {
+                    // Re-enable button
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                }
+            });
+        }
+    });
+    </script>
+
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 YourName. All rights reserved. Hosted on IPFS via .brave domain.</p>
+            <p>&copy; 2025 theonly.brave. All rights reserved. Hosted on IPFS via .brave domain.</p>
         </div>
     </footer>
 
