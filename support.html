@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - theonly.brave</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">theonly.brave</a>
+            </h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="support.html">Support (BAT)</a></li>
+                    <li><a href="why-brave.html">Why Brave</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Support Section (BAT & Crypto Tipping) -->
+    <section id="support" class="support-section">
+        <div class="container">
+            <h2>Support the Creator with BAT</h2>
+            <p>Love the work? Send a tip using <strong>Basic Attention Token (BAT)</strong> or other cryptocurrencies. Your support helps keep this decentralized portfolio running!</p>
+            
+            <div class="tip-module">
+                <input 
+                    type="number" 
+                    id="tip-amount" 
+                    min="0.001" 
+                    step="0.001" 
+                    value="1.0" 
+                    placeholder="0.00"
+                    aria-label="Tip amount"
+                >
+                <select id="tip-unit" aria-label="Cryptocurrency unit">
+                    <option value="bat">BAT (Ethereum)</option>
+                    <option value="eth">ETH (Ethereum)</option>
+                    <option value="matic">MATIC (Polygon)</option>
+                </select>
+                <button id="tip-button" class="cta-button">Send Tip</button>
+            </div>
+
+            <div id="tip-message" class="message-box" role="status" aria-live="polite"></div>
+            
+            <div style="margin-top: 2rem; padding: 1rem; background: rgba(108, 99, 255, 0.1); border-radius: 8px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 0.9rem; margin: 0; opacity: 0.9;">
+                    💡 <strong>About BAT:</strong> Basic Attention Token is the native token of the Brave ecosystem, rewarding users and creators for their attention. Learn more at <a href="https://basicattentiontoken.org/" target="_blank" rel="noopener">basicattentiontoken.org</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                <img src="https://brave.com/static-assets/images/brave-logo-sans-text.svg" alt="Brave logo" style="height: 30px;">
+                <p style="margin: 0; font-size: 1rem; font-weight: 600;">Powered by Brave</p>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 1rem;">Built with Brave Browser | Hosted on IPFS | Tipping via BAT</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.8;">
+                Powered by: 
+                <a href="https://moralis.io" target="_blank" rel="noopener" style="margin: 0 0.3rem;">Moralis</a> • 
+                <a href="https://web3forms.com" target="_blank" rel="noopener" style="margin: 0 0.3rem;">Web3Forms</a> • 
+                <a href="https://pinata.cloud" target="_blank" rel="noopener" style="margin: 0 0.3rem;">Pinata</a>
+            </p>
+            <p>&copy; 2025 theonly.brave. All rights reserved. Hosted on IPFS via .brave domain.</p>
+            <p style="font-size: 0.8rem; margin-top: 1rem;">
+                <a href="https://github.com/jpbrissette" target="_blank" rel="noopener" style="margin: 0 0.5rem;">GitHub</a> |
+                <a href="https://brave.com" target="_blank" rel="noopener" style="margin: 0 0.5rem;">Brave.com</a> |
+                <a href="https://basicattentiontoken.org" target="_blank" rel="noopener" style="margin: 0 0.5rem;">BAT</a> |
+                <a href="https://unstoppabledomains.com" target="_blank" rel="noopener" style="margin: 0 0.5rem;">Unstoppable Domains</a> |
+                <a href="https://ipfs.io" target="_blank" rel="noopener" style="margin: 0 0.5rem;">IPFS</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Tipping Script -->
+    <script src="tip-script.js"></script>
+
+</body>
+</html>
