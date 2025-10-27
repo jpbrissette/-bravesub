@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - theonly.brave</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="site-header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">theonly.brave</a>
+            </h1>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="support.html">Support (BAT)</a></li>
+                    <li><a href="why-brave.html">Why Brave</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a digital artist exploring the intersection of creativity and blockchain technology. My work is a testament to the freedom and permanence that a decentralized web provides. Each piece is a unique asset, stored and accessible on the Interplanetary File System (IPFS).</p>
+        </div>
+    </section>
+
+    <!-- Brave Search Integration -->
+    <section id="brave-search" class="brave-search-section" style="background-color: var(--color-secondary); text-align: center; padding: 6rem 0;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">
+                Search with Brave
+            </h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem;">Powered by Brave Search - the independent, privacy-respecting search engine. No tracking, no profiling, just results.</p>
+            
+            <div style="max-width: 700px; margin: 2rem auto;">
+                <form action="https://search.brave.com/search" method="get" target="_blank" style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+                    <input 
+                        type="text" 
+                        name="q" 
+                        placeholder="Search the web with Brave..." 
+                        required
+                        style="flex: 1; min-width: 250px; padding: 1rem; border: 1px solid #555; border-radius: 8px; background-color: var(--color-dark); color: var(--color-light); font-family: var(--font-family); font-size: 1rem;"
+                    >
+                    <button 
+                        type="submit" 
+                        class="cta-button"
+                        style="white-space: nowrap;"
+                    >
+                        🔍 Search
+                    </button>
+                </form>
+                
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; font-size: 0.9rem;">
+                    <a href="https://search.brave.com/search?q=Web3+art" target="_blank" rel="noopener" style="padding: 0.5rem 1rem; background: rgba(108, 99, 255, 0.2); border-radius: 20px; color: var(--color-light);">Web3 Art</a>
+                    <a href="https://search.brave.com/search?q=IPFS+hosting" target="_blank" rel="noopener" style="padding: 0.5rem 1rem; background: rgba(108, 99, 255, 0.2); border-radius: 20px; color: var(--color-light);">IPFS Hosting</a>
+                    <a href="https://search.brave.com/search?q=Basic+Attention+Token" target="_blank" rel="noopener" style="padding: 0.5rem 1rem; background: rgba(108, 99, 255, 0.2); border-radius: 20px; color: var(--color-light);">BAT Token</a>
+                    <a href="https://search.brave.com/search?q=decentralized+portfolios" target="_blank" rel="noopener" style="padding: 0.5rem 1rem; background: rgba(108, 99, 255, 0.2); border-radius: 20px; color: var(--color-light);">Decentralized Portfolios</a>
+                </div>
+                
+                <p style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.7;">
+                    Why Brave Search? Unlike Google, Brave Search doesn't track you, doesn't build a profile on you, and doesn't sell your data. It's built on an independent index for truly private results.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Have a question or want to collaborate? Send me a message via <a href="https://web3forms.com" target="_blank" rel="noopener" style="color: var(--color-accent);">Web3Forms</a>!</p>
+            
+            <div id="contact-form" class="contact-form">
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" id="access_key" value="8ca6c574-4d2a-4da8-acbe-108b41019967">
+                
+                <!-- Honeypot for spam protection -->
+                <input type="checkbox" id="botcheck" style="display: none;">
+                
+                <input 
+                    type="text" 
+                    id="contact-name"
+                    name="name" 
+                    placeholder="Your Name" 
+                    required
+                    aria-label="Your name"
+                >
+                
+                <input 
+                    type="email" 
+                    id="contact-email"
+                    name="email" 
+                    placeholder="Your Email" 
+                    required
+                    aria-label="Your email address"
+                >
+                
+                <textarea 
+                    id="contact-message-text"
+                    name="message" 
+                    rows="6" 
+                    placeholder="Your Message" 
+                    required
+                    aria-label="Your message"
+                ></textarea>
+                
+                <button type="button" id="contact-submit-btn" class="submit-button">
+                    Send Message
+                </button>
+            </div>
+            
+            <div id="contact-message" class="message-box" role="status" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+                <img src="https://brave.com/static-assets/images/brave-logo-sans-text.svg" alt="Brave logo" style="height: 30px;">
+                <p style="margin: 0; font-size: 1rem; font-weight: 600;">Powered by Brave</p>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 1rem;">Built with Brave Browser | Hosted on IPFS | Tipping via BAT</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.8;">
+                Powered by: 
+                <a href="https://moralis.io" target="_blank" rel="noopener" style="margin: 0 0.3rem;">Moralis</a> • 
+                <a href="https://web3forms.com" target="_blank" rel="noopener" style="margin: 0 0.3rem;">Web3Forms</a> • 
+                <a href="https://pinata.cloud" target="_blank" rel="noopener" style="margin: 0 0.3rem;">Pinata</a>
+            </p>
+            <p>&copy; 2025 theonly.brave. All rights reserved. Hosted on IPFS via .brave domain.</p>
+            <p style="font-size: 0.8rem; margin-top: 1rem;">
+                <a href="https://github.com/jpbrissette" target="_blank" rel="noopener" style="margin: 0 0.5rem;">GitHub</a> |
+                <a href="https://brave.com" target="_blank" rel="noopener" style="margin: 0 0.5rem;">Brave.com</a> |
+                <a href="https://basicattentiontoken.org" target="_blank" rel="noopener" style="margin: 0 0.5rem;">BAT</a> |
+                <a href="https://unstoppabledomains.com" target="_blank" rel="noopener" style="margin: 0 0.5rem;">Unstoppable Domains</a> |
+                <a href="https://ipfs.io" target="_blank" rel="noopener" style="margin: 0 0.5rem;">IPFS</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Contact Form Script -->
+    <script src="contact-script.js"></script>
+
+</body>
+</html>
